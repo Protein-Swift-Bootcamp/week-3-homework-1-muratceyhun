@@ -11,7 +11,7 @@
         <!--First ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstVC" id="BYZ-38-t0r" customClass="FirstViewController" customModule="_rd_Week_Homework1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Cjd-eZ-Mdn" kind="showDetail" identifier="toSecondVC" animates="NO" id="8jW-Vp-rwk"/>
+                                            <action selector="pressButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cq7-pf-XqW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -80,15 +80,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="First ViewController" largeTitleDisplayMode="always" id="NLw-LD-CRx"/>
+                    <connections>
+                        <outlet property="labelSwiftVersion" destination="qbv-GQ-odx" id="H2v-sg-7cz"/>
+                        <outlet property="labelXcodeVersion" destination="xfk-gZ-1Cw" id="lty-A7-uar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="75.669642857142847"/>
         </scene>
-        <!--Title-->
+        <!--Second ViewController-->
         <scene sceneID="EYg-tf-vCk">
             <objects>
-                <viewController id="nYw-29-FQ7" customClass="SecondVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" id="nYw-29-FQ7" customClass="SecondViewController" customModule="_rd_Week_Homework1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nEb-hp-99x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +129,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="UYQ-Bg-PTi" kind="showDetail" identifier="toFirstVC" id="fE6-3z-lny"/>
+                                            <action selector="saveButtonClicked:" destination="nYw-29-FQ7" eventType="touchUpInside" id="ao6-Gt-McN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -145,7 +149,11 @@
                             <constraint firstItem="pZL-Ls-fq0" firstAttribute="bottom" secondItem="8zN-dM-pgw" secondAttribute="bottom" constant="309" id="jEM-17-Qhx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="z3G-zV-UIw"/>
+                    <navigationItem key="navigationItem" title="Second ViewController" id="z3G-zV-UIw"/>
+                    <connections>
+                        <outlet property="swiftTextField" destination="wPY-db-WF0" id="nwG-FU-ELt"/>
+                        <outlet property="xcodeTextField" destination="JdF-qe-Ool" id="Zu9-Uw-v3v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsd-MK-ujh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
