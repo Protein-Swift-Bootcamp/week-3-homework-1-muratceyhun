@@ -20,6 +20,7 @@ protocol TransferData {
 
 class SecondViewController : UIViewController {
     
+    
     var delegate : TransferData? = nil
 
     
@@ -31,6 +32,10 @@ class SecondViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "daffas"
+
+        
+        
         
         
 
@@ -39,25 +44,36 @@ class SecondViewController : UIViewController {
     @IBAction func saveButtonClicked(_ sender: Any) {
         
         
+        
         if self.delegate != nil {
             
+        
             
             guard let swiftInfo = swiftTextField.text else { return }
             guard let xcodeInfo = xcodeTextField.text else { return }
+
             
             self.delegate?.showInfoSwift(myInfo: swiftInfo)
             self.delegate?.showInfoXcode(myInfo: xcodeInfo)
-            
-            
+
+
             
             dismiss(animated: true, completion: nil)
             
+            
+            
         }
-
+        
+        
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "firstVC") as! FirstViewController
+        destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
+     
+
+        
+        
         
     }
     

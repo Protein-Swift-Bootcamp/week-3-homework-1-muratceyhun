@@ -32,8 +32,9 @@ class FirstViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
+        destinationVC.modalTransitionStyle = .flipHorizontal
+        destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
-        
         destinationVC.delegate = self
         
         
